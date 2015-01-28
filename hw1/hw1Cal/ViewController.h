@@ -1,0 +1,15 @@
+//
+//  ViewController.h
+//  hw1Cal
+//
+//  Created by Wenhan on 1/26/15.
+//  Copyright (c) 2015 Wenhan. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *display;
+
+@end
+
