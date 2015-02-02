@@ -16,12 +16,6 @@
 
 @synthesize operandStack = _operandStack;
 
-- (NSMutableArray *)operandStack
-{
-    if (!_operandStack)
-        _operandStack = [[NSMutableArray alloc] init];
-    return _operandStack;
-}
 
 - (void)setOperandStack:(NSMutableArray *)anArray
 {
