@@ -11,7 +11,6 @@
 @interface CalculatorBrain : NSObject
 
 - (void)pushOperand:(double)operand;
-- (double)performOperation:(NSString *)operation withStack:(NSMutableArray *)stack;
 
 @property (readonly) id program;
 

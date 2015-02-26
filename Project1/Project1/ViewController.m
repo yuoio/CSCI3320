@@ -18,6 +18,7 @@
 @implementation ViewController
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize display;
+@synthesize history;
 @synthesize brain = _brain;
 
 - (CalculatorBrain *)brain
@@ -28,17 +29,34 @@
     return _brain;
 }
 
+- (void)updateDisplay:(NSString *)text
+{
+    [self updateDisplay:text status:NO];
+}
+
+- (void)updateDisplay:(NSString *)text status:(BOOL)status
+{
+    if (status)
+        self.display.text = [self.display.text stringByAppendingString:text];
+    else
+        self.display.text = text;
+}
+
 - (IBAction)digitPressed:(UIButton *)sender {
     
     NSString *digit = [sender currentTitle];
-    if (self.userIsInTheMiddleOfEnteringANumber) {
-        self.display.text = [self.display.text stringByAppendingString:digit];
+    
+    // Detecting if the point is first pressed or not.
+    
+    if ([digit isEqualToString:@"."]) {
+        BOOL pointPressed = ([self.display.text rangeOfString:@"."].location != NSNotFound);
+        if (self.userIsInTheMiddleOfEnteringANumber && pointPressed ) {
+            return;
+        }
     }
-    else
-    {
-        self.display.text = digit;
-        self.userIsInTheMiddleOfEnteringANumber = YES;
-    }
+    
+    self.userIsInTheMiddleOfEnteringANumber = YES;
+    [self updateDisplay:digit status:userIsInTheMiddleOfEnteringANumber];
 }
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
@@ -52,8 +70,7 @@
     }
     
     NSString *operation = [sender currentTitle];
-    double result = [self.brain performOperation:operation];
-    self.display.text = [NSString stringWithFormat:@"%g", result];
+    //self.display.text = [NSString stringWithFormat:@"%g", result];
 }
 
 @end
