@@ -45,14 +45,7 @@ static NSDictionary *_dictionaryOfOperations;
     [self.operandStack addObject:operandObject];
 }
 
-- (double)popOperand
-{
-    NSNumber *operandObject = [self.operandStack lastObject];
-    if (operandObject) {
-        [self.operandStack removeLastObject];
-    }
-    return [operandObject doubleValue];
-}
+
 
 
 // Core of 'Clear' function
@@ -88,12 +81,12 @@ static NSDictionary *_dictionaryOfOperations;
         [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:TwoOperators, NUMBER_OF_OPERATORS, @"(%@ / %@)", FORMAT_OF_OPERATIONS, nil] forKey:@"/"];
         
         // Set up the dictionary of one operator operation
-        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"Sin(%@)", nil] forKey:@"sin"];
-        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"Cos(%@)", nil] forKey:@"cos"];
-        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"√(%@)", nil] forKey:@"√"];
+        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"Sin(%@)", FORMAT_OF_OPERATIONS, nil] forKey:@"sin"];
+        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"Cos(%@)", FORMAT_OF_OPERATIONS, nil] forKey:@"cos"];
+        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:OneOperator, NUMBER_OF_OPERATORS, @"√(%@)", FORMAT_OF_OPERATIONS, nil] forKey:@"√"];
         
         // Set up the dictionary of no operator operation
-        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:NoOperator, NUMBER_OF_OPERATORS, @"π", nil] forKey:@"π"];
+        [index setValue:[NSDictionary dictionaryWithObjectsAndKeys:NoOperator, NUMBER_OF_OPERATORS, @"π", FORMAT_OF_OPERATIONS, nil] forKey:@"π"];
         
         _dictionaryOfOperations = [index copy];
     }
@@ -113,7 +106,7 @@ static NSDictionary *_dictionaryOfOperations;
     }
     else if ([element isKindOfClass:[NSString class]]) {
         result = [self performOperation:element withStack:stack];
-        [self popElementFromStack:result];
+        NSLog(@"%@",result);
     }
     
     return result;
@@ -122,8 +115,8 @@ static NSDictionary *_dictionaryOfOperations;
 // The core calculating part of the program
 + (id)performOperation:(NSString *)operation withStack:(NSMutableArray *)stack{
     
-    id result, leftObject, rightObject;
-    double leftValue = 0, rightValue = 0;
+    id result,  leftObject, rightObject;
+    double leftValue = 0, rightValue = 0, tempresult = 0;
     unichar symbol;
     
     if ([operation length] > 0) symbol = [operation characterAtIndex:0];
@@ -131,13 +124,13 @@ static NSDictionary *_dictionaryOfOperations;
         case '/':
             rightObject = [self popElementFromStack:stack];
             leftObject  = [self popElementFromStack:stack];
+         
             if (!leftObject || !rightObject) {
                 result = [@"ERROR: Not enough operands for " stringByAppendingString:operation];
-            
+            }else{
                 if (!result) {
                     if ([rightObject isKindOfClass:[NSNumber class]]) rightValue = [rightObject doubleValue];
                     if ([leftObject  isKindOfClass:[NSNumber class]]) leftValue  = [leftObject  doubleValue];
-                    
                     if (rightValue == 0) {
                         result = @"ERROR: Divide by 0";
                     } else {
@@ -152,7 +145,7 @@ static NSDictionary *_dictionaryOfOperations;
             leftObject  = [self popElementFromStack:stack];
             if (!leftObject || !rightObject) {
                 result = [@"ERROR: Not enough operands for " stringByAppendingString:operation];
-
+            }else{
                 if (!result) {
                     if ([rightObject isKindOfClass:[NSNumber class]]) rightValue = [rightObject doubleValue];
                     if ([leftObject  isKindOfClass:[NSNumber class]]) leftValue  = [leftObject  doubleValue];
@@ -166,11 +159,12 @@ static NSDictionary *_dictionaryOfOperations;
             leftObject  = [self popElementFromStack:stack];
             if (!leftObject || !rightObject) {
                 result = [@"ERROR: Not enough operands for " stringByAppendingString:operation];
-   
+            }else {
                 if (!result) {
                     if ([rightObject isKindOfClass:[NSNumber class]]) rightValue = [rightObject doubleValue];
                     if ([leftObject  isKindOfClass:[NSNumber class]]) leftValue  = [leftObject  doubleValue];
                     result = [NSNumber numberWithDouble:leftValue - rightValue];
+                    
                 }
             }
             break;
@@ -180,11 +174,12 @@ static NSDictionary *_dictionaryOfOperations;
             leftObject  = [self popElementFromStack:stack];
             if (!leftObject || !rightObject) {
                 result = [@"ERROR: Not enough operands for " stringByAppendingString:operation];
-            
+            } else {
                 if (!result) {
                     if ([rightObject isKindOfClass:[NSNumber class]]) rightValue = [rightObject doubleValue];
                     if ([leftObject  isKindOfClass:[NSNumber class]]) leftValue  = [leftObject  doubleValue];
                     result = [NSNumber numberWithDouble:leftValue + rightValue];
+
                 }
             }
             break;
@@ -228,9 +223,15 @@ static NSDictionary *_dictionaryOfOperations;
             result = [NSNumber numberWithDouble:M_PI];
             break;
             
+        case 'p':
+            tempresult = -1 * [result doubleValue];
+            result = [NSNumber numberWithDouble:tempresult];
+            break;
         default:
             result = [NSString stringWithFormat:@"ERROR: Unsupported operation %@", operation];
             break;
+            
+        
     }
     
     return result;
@@ -262,7 +263,6 @@ static NSDictionary *_dictionaryOfOperations;
         
         NSDictionary *operation = [[self dictionaryOfOperations] objectForKey:element];
         if (operation) {
-            // If the element is an operation...
             operands = [[operation objectForKey:NUMBER_OF_OPERATORS] unsignedIntegerValue];
             format = [operation objectForKey:FORMAT_OF_OPERATIONS];
             switch (operands) {
@@ -285,7 +285,6 @@ static NSDictionary *_dictionaryOfOperations;
                     break;
                     
                 default:
-                    NSLog(@"ERROR: Unsupported number of operands for operation %@: %@", operation, operands);
                     break;
             }
         } else {

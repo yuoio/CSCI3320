@@ -12,6 +12,8 @@
 
 - (void)pushOperand:(double)operand;
 - (void)pushOperation:(NSString *)operation;
+- (void)clearOperandStack;
+- (void)clearTopOfOperandStack;
 
 
 @property (readonly) id program;

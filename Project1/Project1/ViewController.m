@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property (nonatomic) BOOL userIsInTheMiddleOfEnteringANumber;
+@property (nonatomic) BOOL isPositive;
 @property (nonatomic, strong) CalculatorBrain *brain;
 @end
 
@@ -27,6 +28,30 @@
         _brain = [[CalculatorBrain alloc] init];
     }
     return _brain;
+}
+
+- (IBAction)clearAll:(id)sender {
+    
+    [self.brain clearOperandStack];
+    self.userIsInTheMiddleOfEnteringANumber = NO;
+    [self updateDisplay:@"0"];
+    [self updateHistory];
+}
+
+- (IBAction)clearLast:(id)sender {
+    
+    if (self.userIsInTheMiddleOfEnteringANumber) {
+        [self updateDisplay:[self.display.text substringToIndex:[self.display.text length] - 1]];
+        if ([self.display.text isEqual:@""]) {
+            [self updateDisplay:@"0"];
+            self.userIsInTheMiddleOfEnteringANumber = NO;
+        }
+    }
+    else
+    {
+        [self.brain clearOperandStack];
+        [self runProgram];
+    }
 }
 
 - (void)updateDisplay:(NSString *)text
@@ -66,6 +91,7 @@
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;
+    [self updateHistory];
 }
 
 - (IBAction)operationPressed:(id)sender {
@@ -75,7 +101,7 @@
     }
     [self.brain pushOperation:[sender currentTitle]];
     [self runProgram];
-    //self.display.text = [NSString stringWithFormat:@"%g", result];
+    
 }
 
 - (void)runProgram
@@ -85,6 +111,9 @@
   if ([result isKindOfClass:[NSNumber class]]) {
   [self updateDisplay:[NSString stringWithFormat:@"%@", result]];
   [self updateHistory];
-}
+  } else if ([result isKindOfClass:[NSString class]]) {
+      [self.brain clearTopOfOperandStack];
+      self.history.text = result;
+  }
 }
 @end
