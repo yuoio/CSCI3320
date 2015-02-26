@@ -42,12 +42,16 @@
         self.display.text = text;
 }
 
+- (void)updateHistory
+{
+    self.history.text = [CalculatorBrain descriptionOfProgram:self.brain.program];
+}
+
 - (IBAction)digitPressed:(UIButton *)sender {
     
     NSString *digit = [sender currentTitle];
     
     // Detecting if the point is first pressed or not.
-    
     if ([digit isEqualToString:@"."]) {
         BOOL pointPressed = ([self.display.text rangeOfString:@"."].location != NSNotFound);
         if (self.userIsInTheMiddleOfEnteringANumber && pointPressed ) {
@@ -55,8 +59,9 @@
         }
     }
     
-    self.userIsInTheMiddleOfEnteringANumber = YES;
     [self updateDisplay:digit status:userIsInTheMiddleOfEnteringANumber];
+    self.userIsInTheMiddleOfEnteringANumber = YES;
+
 }
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
@@ -68,9 +73,18 @@
     if (self.userIsInTheMiddleOfEnteringANumber) {
         [self enterPressed];
     }
-    
-    NSString *operation = [sender currentTitle];
+    [self.brain pushOperation:[sender currentTitle]];
+    [self runProgram];
     //self.display.text = [NSString stringWithFormat:@"%g", result];
 }
 
+- (void)runProgram
+{
+  id result = [CalculatorBrain runProgram:self.brain.program];
+
+  if ([result isKindOfClass:[NSNumber class]]) {
+  [self updateDisplay:[NSString stringWithFormat:@"%@", result]];
+  [self updateHistory];
+}
+}
 @end

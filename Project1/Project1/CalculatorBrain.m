@@ -34,6 +34,11 @@ static NSDictionary *_dictionaryOfOperations;
     _operandStack = anArray;
 }
 
+- (void)pushOperation:(NSString *)operation
+{
+    [self.operandStack addObject:operation];
+}
+
 - (void)pushOperand:(double)operand
 {
     NSNumber *operandObject = [NSNumber numberWithDouble:operand];
