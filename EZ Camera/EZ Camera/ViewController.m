@@ -10,7 +10,12 @@
 #import "SecondViewController.h"
 
 @interface ViewController ()
-
+{
+    UIImage *originalImage;
+}
+- (IBAction)photoFromAlbum;
+- (IBAction)photoFromCamera;
+@property BOOL sourceIsCamera, sourceIsAlbum;
 
 @end
 
@@ -27,13 +32,56 @@
     if ([segue.identifier isEqualToString:@"camera"]) {
         
         SecondViewController *vc = [segue destinationViewController];
-        vc.sourceIsCamera = YES;
+        vc.passedImage = originalImage;
     }
     else if ([segue.identifier isEqualToString:@"album"]) {
         
         SecondViewController *vc = [segue destinationViewController];
-        vc.sourceIsAlbum = YES;
+        vc.passedImage = originalImage;
+        NSLog(@"album");
     }
+}
+
+- (IBAction)photoFromAlbum
+{
+    
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    photoPicker.delegate = self;
+    photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:photoPicker animated:YES completion:NULL];
+    
+    self.sourceIsAlbum = YES;
+    
+    
+}
+
+- (IBAction)photoFromCamera
+{
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    
+    photoPicker.delegate = self;
+    photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:photoPicker animated:YES completion:NULL];
+    
+     self.sourceIsCamera = YES;
+    
+}
+
+-(void)imagePickerController:(UIImagePickerController *)photoPicker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    originalImage = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
+    [photoPicker dismissModalViewControllerAnimated:YES];
+    if (self.sourceIsAlbum) {
+        [self performSegueWithIdentifier:@"album" sender:self];
+    }
+    else if (self.sourceIsCamera)
+    {
+        [self performSegueWithIdentifier:@"camera" sender:self];
+    }
+    
 }
 
 

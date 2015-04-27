@@ -23,6 +23,10 @@
 		46BCBB641AEE248C003534E8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB631AEE248C003534E8 /* OpenGLES.framework */; };
 		46BCBB661AEE2490003534E8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB651AEE2490003534E8 /* AVFoundation.framework */; };
 		46BCBB681AEE2495003534E8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB671AEE2495003534E8 /* QuartzCore.framework */; };
+		46BCBB6B1AEE84A7003534E8 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BCBB6A1AEE84A7003534E8 /* ThirdViewController.m */; };
+		46BCBB6F1AEE9FA1003534E8 /* Multimedia_078.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB6E1AEE9FA1003534E8 /* Multimedia_078.png */; };
+		46BCBB711AEE9FDA003534E8 /* Internet_020.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB701AEE9FDA003534E8 /* Internet_020.png */; };
+		46BCBB731AEE9FE3003534E8 /* Internet_026.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB721AEE9FE3003534E8 /* Internet_026.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,11 @@
 		46BCBB631AEE248C003534E8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		46BCBB651AEE2490003534E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		46BCBB671AEE2495003534E8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		46BCBB691AEE84A7003534E8 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		46BCBB6A1AEE84A7003534E8 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		46BCBB6E1AEE9FA1003534E8 /* Multimedia_078.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Multimedia_078.png; path = "Submodules/GPUImage/framework/../../../../../../Downloads/Webbicon Icons/Webbicons/Webbicon_Multimedia/png/64x64/Multimedia_078.png"; sourceTree = SOURCE_ROOT; };
+		46BCBB701AEE9FDA003534E8 /* Internet_020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Internet_020.png; path = "../../../../Downloads/Webbicon Icons/Webbicons/Webbicon_Internet/png/64x64/Internet_020.png"; sourceTree = "<group>"; };
+		46BCBB721AEE9FE3003534E8 /* Internet_026.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Internet_026.png; path = "../../../../Downloads/Webbicon Icons/Webbicons/Webbicon_Internet/png/64x64/Internet_026.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +147,8 @@
 				464B2CE71AEE20A800E6F0F6 /* ViewController.m */,
 				46BCBB4B1AEE21FE003534E8 /* SecondViewController.h */,
 				46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */,
+				46BCBB691AEE84A7003534E8 /* ThirdViewController.h */,
+				46BCBB6A1AEE84A7003534E8 /* ThirdViewController.m */,
 				464B2CE91AEE20A800E6F0F6 /* Main.storyboard */,
 				464B2CEC1AEE20A800E6F0F6 /* Images.xcassets */,
 				464B2CEE1AEE20A800E6F0F6 /* LaunchScreen.xib */,
@@ -150,6 +161,9 @@
 		464B2CDF1AEE20A800E6F0F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46BCBB721AEE9FE3003534E8 /* Internet_026.png */,
+				46BCBB701AEE9FDA003534E8 /* Internet_020.png */,
+				46BCBB6E1AEE9FA1003534E8 /* Multimedia_078.png */,
 				46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */,
 				46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */,
 				464B2CE01AEE20A800E6F0F6 /* Info.plist */,
@@ -291,8 +305,11 @@
 				464B2CEB1AEE20A800E6F0F6 /* Main.storyboard in Resources */,
 				464B2CF01AEE20A800E6F0F6 /* LaunchScreen.xib in Resources */,
 				46BCBB511AEE221E003534E8 /* Multimedia_072.png in Resources */,
+				46BCBB731AEE9FE3003534E8 /* Internet_026.png in Resources */,
 				46BCBB501AEE221E003534E8 /* Multimedia_047.png in Resources */,
+				46BCBB6F1AEE9FA1003534E8 /* Multimedia_078.png in Resources */,
 				464B2CED1AEE20A800E6F0F6 /* Images.xcassets in Resources */,
+				46BCBB711AEE9FDA003534E8 /* Internet_020.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BCBB4D1AEE21FE003534E8 /* SecondViewController.m in Sources */,
+				46BCBB6B1AEE84A7003534E8 /* ThirdViewController.m in Sources */,
 				464B2CE81AEE20A800E6F0F6 /* ViewController.m in Sources */,
 				464B2CE51AEE20A800E6F0F6 /* AppDelegate.m in Sources */,
 				464B2CE21AEE20A800E6F0F6 /* main.m in Sources */,

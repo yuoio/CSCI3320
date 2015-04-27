@@ -11,4 +11,5 @@
 @interface SecondViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property BOOL sourceIsCamera, sourceIsAlbum;
+@property (weak, nonatomic) UIImage *passedImage;
 @end
