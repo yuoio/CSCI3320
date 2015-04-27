@@ -14,6 +14,9 @@
 		464B2CED1AEE20A800E6F0F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464B2CEC1AEE20A800E6F0F6 /* Images.xcassets */; };
 		464B2CF01AEE20A800E6F0F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464B2CEE1AEE20A800E6F0F6 /* LaunchScreen.xib */; };
 		464B2CFC1AEE20A800E6F0F6 /* EZ_CameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 464B2CFB1AEE20A800E6F0F6 /* EZ_CameraTests.m */; };
+		46BCBB4D1AEE21FE003534E8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */; };
+		46BCBB501AEE221E003534E8 /* Multimedia_047.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */; };
+		46BCBB511AEE221E003534E8 /* Multimedia_072.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		464B2CF51AEE20A800E6F0F6 /* EZ CameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EZ CameraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		464B2CFA1AEE20A800E6F0F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464B2CFB1AEE20A800E6F0F6 /* EZ_CameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZ_CameraTests.m; sourceTree = "<group>"; };
+		46BCBB4B1AEE21FE003534E8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multimedia_047.png; sourceTree = "<group>"; };
+		46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multimedia_072.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,8 @@
 				464B2CE41AEE20A800E6F0F6 /* AppDelegate.m */,
 				464B2CE61AEE20A800E6F0F6 /* ViewController.h */,
 				464B2CE71AEE20A800E6F0F6 /* ViewController.m */,
+				46BCBB4B1AEE21FE003534E8 /* SecondViewController.h */,
+				46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */,
 				464B2CE91AEE20A800E6F0F6 /* Main.storyboard */,
 				464B2CEC1AEE20A800E6F0F6 /* Images.xcassets */,
 				464B2CEE1AEE20A800E6F0F6 /* LaunchScreen.xib */,
@@ -96,6 +105,8 @@
 		464B2CDF1AEE20A800E6F0F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */,
+				46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */,
 				464B2CE01AEE20A800E6F0F6 /* Info.plist */,
 				464B2CE11AEE20A800E6F0F6 /* main.m */,
 			);
@@ -201,6 +212,8 @@
 			files = (
 				464B2CEB1AEE20A800E6F0F6 /* Main.storyboard in Resources */,
 				464B2CF01AEE20A800E6F0F6 /* LaunchScreen.xib in Resources */,
+				46BCBB511AEE221E003534E8 /* Multimedia_072.png in Resources */,
+				46BCBB501AEE221E003534E8 /* Multimedia_047.png in Resources */,
 				464B2CED1AEE20A800E6F0F6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BCBB4D1AEE21FE003534E8 /* SecondViewController.m in Sources */,
 				464B2CE81AEE20A800E6F0F6 /* ViewController.m in Sources */,
 				464B2CE51AEE20A800E6F0F6 /* AppDelegate.m in Sources */,
 				464B2CE21AEE20A800E6F0F6 /* main.m in Sources */,
@@ -416,6 +430,7 @@
 				464B2D011AEE20A800E6F0F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		464B2D021AEE20A800E6F0F6 /* Build configuration list for PBXNativeTarget "EZ CameraTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				464B2D041AEE20A800E6F0F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
