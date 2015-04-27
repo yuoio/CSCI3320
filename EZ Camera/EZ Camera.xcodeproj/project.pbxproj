@@ -17,6 +17,12 @@
 		46BCBB4D1AEE21FE003534E8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */; };
 		46BCBB501AEE221E003534E8 /* Multimedia_047.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */; };
 		46BCBB511AEE221E003534E8 /* Multimedia_072.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */; };
+		46BCBB5E1AEE2471003534E8 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB591AEE2458003534E8 /* libGPUImage.a */; };
+		46BCBB601AEE247D003534E8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB5F1AEE247D003534E8 /* CoreMedia.framework */; };
+		46BCBB621AEE2483003534E8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB611AEE2483003534E8 /* CoreVideo.framework */; };
+		46BCBB641AEE248C003534E8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB631AEE248C003534E8 /* OpenGLES.framework */; };
+		46BCBB661AEE2490003534E8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB651AEE2490003534E8 /* AVFoundation.framework */; };
+		46BCBB681AEE2495003534E8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BCBB671AEE2495003534E8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 464B2CDB1AEE20A800E6F0F6;
 			remoteInfo = "EZ Camera";
+		};
+		46BCBB581AEE2458003534E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		46BCBB5A1AEE2458003534E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		46BCBB5C1AEE246C003534E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,6 +74,12 @@
 		46BCBB4C1AEE21FE003534E8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		46BCBB4E1AEE221E003534E8 /* Multimedia_047.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multimedia_047.png; sourceTree = "<group>"; };
 		46BCBB4F1AEE221E003534E8 /* Multimedia_072.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multimedia_072.png; sourceTree = "<group>"; };
+		46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/GPUImage/framework/GPUImage.xcodeproj; sourceTree = SOURCE_ROOT; };
+		46BCBB5F1AEE247D003534E8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		46BCBB611AEE2483003534E8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		46BCBB631AEE248C003534E8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		46BCBB651AEE2490003534E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		46BCBB671AEE2495003534E8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +87,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BCBB681AEE2495003534E8 /* QuartzCore.framework in Frameworks */,
+				46BCBB661AEE2490003534E8 /* AVFoundation.framework in Frameworks */,
+				46BCBB641AEE248C003534E8 /* OpenGLES.framework in Frameworks */,
+				46BCBB621AEE2483003534E8 /* CoreVideo.framework in Frameworks */,
+				46BCBB601AEE247D003534E8 /* CoreMedia.framework in Frameworks */,
+				46BCBB5E1AEE2471003534E8 /* libGPUImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +109,11 @@
 		464B2CD31AEE20A700E6F0F6 = {
 			isa = PBXGroup;
 			children = (
+				46BCBB671AEE2495003534E8 /* QuartzCore.framework */,
+				46BCBB651AEE2490003534E8 /* AVFoundation.framework */,
+				46BCBB631AEE248C003534E8 /* OpenGLES.framework */,
+				46BCBB611AEE2483003534E8 /* CoreVideo.framework */,
+				46BCBB5F1AEE247D003534E8 /* CoreMedia.framework */,
 				464B2CDE1AEE20A800E6F0F6 /* EZ Camera */,
 				464B2CF81AEE20A800E6F0F6 /* EZ CameraTests */,
 				464B2CDD1AEE20A800E6F0F6 /* Products */,
@@ -97,6 +141,7 @@
 				464B2CE91AEE20A800E6F0F6 /* Main.storyboard */,
 				464B2CEC1AEE20A800E6F0F6 /* Images.xcassets */,
 				464B2CEE1AEE20A800E6F0F6 /* LaunchScreen.xib */,
+				46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */,
 				464B2CDF1AEE20A800E6F0F6 /* Supporting Files */,
 			);
 			path = "EZ Camera";
@@ -130,6 +175,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		46BCBB531AEE2458003534E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46BCBB591AEE2458003534E8 /* libGPUImage.a */,
+				46BCBB5B1AEE2458003534E8 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +198,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				46BCBB5D1AEE246C003534E8 /* PBXTargetDependency */,
 			);
 			name = "EZ Camera";
 			productName = "EZ Camera";
@@ -197,6 +252,12 @@
 			mainGroup = 464B2CD31AEE20A700E6F0F6;
 			productRefGroup = 464B2CDD1AEE20A800E6F0F6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 46BCBB531AEE2458003534E8 /* Products */;
+					ProjectRef = 46BCBB521AEE2458003534E8 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				464B2CDB1AEE20A800E6F0F6 /* EZ Camera */,
@@ -204,6 +265,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		46BCBB591AEE2458003534E8 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 46BCBB581AEE2458003534E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		46BCBB5B1AEE2458003534E8 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 46BCBB5A1AEE2458003534E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		464B2CDA1AEE20A800E6F0F6 /* Resources */ = {
@@ -254,6 +332,11 @@
 			isa = PBXTargetDependency;
 			target = 464B2CDB1AEE20A800E6F0F6 /* EZ Camera */;
 			targetProxy = 464B2CF61AEE20A800E6F0F6 /* PBXContainerItemProxy */;
+		};
+		46BCBB5D1AEE246C003534E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 46BCBB5C1AEE246C003534E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -361,6 +444,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"Submodules/GPUImage/framework/**",
+				);
 				INFOPLIST_FILE = "EZ Camera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,6 +459,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"Submodules/GPUImage/framework/**",
+				);
 				INFOPLIST_FILE = "EZ Camera/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

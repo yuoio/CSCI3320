@@ -7,6 +7,7 @@
 //
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "GPUImage.h"
 
 @interface SecondViewController ()
 {
